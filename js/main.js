@@ -2,20 +2,30 @@ document.addEventListener('DOMContentLoaded', function (event) {
 
 	console.log('The DOM is ready!!!');
 
-	var number = document.getElementsByClassName("number")
+	var numbers = document.getElementsByClassName("number")
+	var operators = document.getElementsByClassName("operator")
+
+	var num1 = 	(function getNumbers() {
+					for (i = 0; i < numbers.length; i++) {
+						numbers[i].addEventListener('click', function (event){
+							return event.target.value;
+						})
+					}
+				})
 
 
-	function getNumbers() {
-		for (i = 0; i < number.length; i++) {
-			number[i].addEventListener('click', function (event){
-				console.log('clicked')
+
+	function getOperators() {
+		for (i = 0; i < operators.length; i++) {
+			operators[i].addEventListener('click', function (event){
+				console.log(event.target.value);
 			})
 		}
 
 	}
-getNumbers();
 
-	console.log(number)
+getOperators();
+
 
 	// number.addEventListener('click', function (event) {
 	// 	console.log('help me, Ive been clicked!')
