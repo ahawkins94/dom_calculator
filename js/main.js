@@ -6,34 +6,36 @@ document.addEventListener('DOMContentLoaded', function (event) {
 	var operators = document.getElementsByClassName("operator");
 
 	var num1 = 0;
+	var operator;
 
 	function getNumbers() {
 		for (i = 0; i < numbers.length; i++) {
 			numbers[i].addEventListener('click', function (event) {
-				if (num1 = 0) {
+				if (num1 === 0) {
 					num1 = event.target.value;
 					console.log(num1);
-			}
-		})
+				}	
+			})
+		}
 	}
 
-
+getNumbers();
+getOperators();
 
 	function getOperators() {
 		for (i = 0; i < operators.length; i++) {
 			operators[i].addEventListener('click', function (event){
-				})
-			}
+				if (typeof num1 == 'number'){
+					operator = event.target.value;
+					console.log(operator);
+				}
+			})
+			
 		}
 
 	}
 
-getNumbers();
-
-
+})
 	// number.addEventListener('click', function (event) {
 	// 	console.log('help me, Ive been clicked!')
 	// })
-
-
-});
